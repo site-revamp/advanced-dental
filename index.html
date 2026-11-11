@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en-SG">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Advanced Dental | Find a Dental Clinic in Singapore</title>
+<meta name="description" content="Find an Advanced Dental clinic by neighbourhood, region or MRT station. Explore treatments, view prices and book routine or urgent dental care in Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;650;700;750&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Advanced Dental",
+  "url": "https://www.advanceddental.co/",
+  "telephone": "+6562332199",
+  "areaServed": {"@type": "Country", "name": "Singapore"}
+}
+</script>
+<style>
+:root{
+  --blue:#0d78e0;--action:#0a63bc;--hover:#084f96;--ice:#e7f2fc;
+  --green:#51d81e;--mint:#eafbe3;--bronze:#b08a62;
+  --cream:#f2f0e7;--sand:#f6efe6;--ink:#3d3d3d;--muted:#535353;
+  --line:#e3e1d7;--control:#7b8190;--surface:#f8f8f8;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;color:var(--ink);background:#fff;font:400 clamp(1rem,.95rem + .22vw,1.125rem)/1.6 Inter,system-ui,sans-serif}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{line-height:1.12;letter-spacing:-.035em;font-weight:750}
+h1{font-size:clamp(2.375rem,1.67rem + 3.3vw,4.25rem);max-width:14ch;text-wrap:balance}
+h2{font-size:clamp(1.875rem,1.45rem + 2vw,3rem)}
+h3{font-size:clamp(1.25rem,1.12rem + .4vw,1.625rem)}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--action);text-underline-offset:.21em}
+a:hover{color:var(--hover)}
+:focus-visible{outline:3px solid var(--action);outline-offset:4px}
+.wrap{width:min(1180px,calc(100% - 64px));margin-inline:auto}
+.section{padding-block:clamp(2.8rem,6vw,5.4rem)}
+section[id]{scroll-margin-top:1rem}
+.skip{position:absolute;z-index:9;top:.5rem;left:.5rem;padding:.5rem .8rem;background:white;transform:translateY(-200%)}
+.skip:focus{transform:none}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:.7rem}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:.6rem 1rem;border:1px solid var(--action);border-radius:.55rem;background:var(--action);color:white;font:700 1rem/1.25 Inter,system-ui,sans-serif;text-align:center;text-decoration:none}
+.btn:hover{background:var(--hover);color:white}
+.btn.outline{background:white;border-color:var(--control);color:var(--ink)}
+.btn.outline:hover{background:var(--ice);color:var(--hover)}
+header{border-bottom:1px solid var(--line)}
+.head{min-height:78px;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.5rem}
+.brand{display:flex;gap:.4rem;align-items:center;color:var(--ink);text-decoration:none;font-size:1.125rem;white-space:nowrap}
+.brand img{width:43px}
+.brand b{font-weight:750}
+nav{display:flex;align-items:center;gap:clamp(.75rem,2.1vw,1.65rem)}
+nav>a:not(.btn){font-size:1rem;font-weight:650;text-decoration:none;color:var(--ink)}
+nav>a:not(.btn):hover{text-decoration:underline}
+.menu{display:none}
+.hero{background:var(--cream);padding-block:clamp(2.4rem,5vw,4.8rem) clamp(1.8rem,4vw,3.4rem)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:clamp(1.5rem,5vw,5rem)}
+.hero .place{display:inline-flex;align-items:center;gap:.5rem;font-weight:650;font-size:.9375rem;margin-bottom:.85rem}
+.place::before{content:"";width:.65rem;height:.65rem;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--mint)}
+.lead{margin:.9rem 0 1.15rem;max-width:40ch}
+.photo{background:white;border:1px solid var(--line);border-radius:1rem;overflow:hidden}
+.photo img{width:100%;aspect-ratio:1.78;object-fit:cover}
+.photo figcaption{padding:.6rem .95rem;font-size:.9375rem;color:var(--muted)}
+.finder{margin-top:clamp(1.4rem,4vw,2.7rem);padding:clamp(1rem,3vw,1.65rem);background:var(--ice);border-left:4px solid var(--blue);border-radius:.7rem}
+.finder-head{display:flex;align-items:baseline;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap}
+.finder-head h2{font-size:clamp(1.5rem,1.2rem + 1vw,2rem)}
+.finder-head a,.clinic-result a{font-weight:700}
+.filters{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:.65rem;margin-top:.8rem}
+.filters label{display:grid;gap:.2rem;font-size:.9375rem;font-weight:650}
+.filters input,.filters select{width:100%;min-width:0;min-height:46px;border:1px solid var(--control);border-radius:.45rem;background:white;color:var(--ink);font:400 1rem Inter,system-ui,sans-serif;padding:.55rem .65rem}
+.status{font-size:1rem;margin-top:.65rem}
+.status:empty{display:none}
+.results{list-style:none;padding:0;margin:.65rem 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
+.results:empty{display:none}
+.clinic-result{background:white;border-radius:.42rem;padding:.65rem .75rem;font-size:1rem}
+.clinic-result span{display:block;color:var(--muted);font-size:.9375rem}
+.intro{max-width:60ch;margin:.7rem 0 1.45rem}
+.care-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(.8rem,3vw,2rem)}
+.care{min-width:0;display:flex;flex-direction:column;align-items:start;gap:.55rem;border-top:1px solid var(--control);padding:1.05rem 0}
+.care svg{width:42px;height:42px;padding:7px;background:var(--ice);border-radius:50%;fill:none;stroke:var(--action);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.care:nth-child(3n) svg{background:var(--mint)}
+.care p,.care a{font-size:1rem}
+.care a{margin-top:auto;font-weight:700}
+.urgent{background:var(--ice)}
+.urgent-grid,.visit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);align-items:center;gap:clamp(1.25rem,4vw,3rem)}
+.urgent-grid p,.visit-grid p{margin-top:.65rem}
+.urgent-grid .actions{justify-content:flex-end}
+.visit-grid{align-items:start}
+.visit-grid .actions{margin-top:1rem}
+.fees{padding:1.2rem;background:var(--sand);border-top:3px solid var(--bronze);border-radius:.5rem}
+.fees a{font-weight:650}
+footer{background:var(--surface);border-top:1px solid var(--line);padding:1.4rem 0}
+footer .wrap{display:flex;align-items:baseline;justify-content:space-between;gap:.65rem 1.25rem;flex-wrap:wrap;font-size:1rem}
+.sticky{display:none}
+@media(max-width:850px){
+  .desktop{display:none}
+  .menu{display:block}
+  .menu summary{cursor:pointer;font-size:1rem;font-weight:700;border:1px solid var(--control);border-radius:.45rem;min-height:44px;padding:.48rem .7rem}
+  .menu nav{display:grid;gap:.55rem;margin-top:.55rem}
+}
+@media(max-width:700px){
+  .wrap{width:calc(100% - 20px)}
+  .head{min-height:62px}
+  .brand{font-size:1rem}
+  .brand img{width:35px}
+  .hero-grid,.urgent-grid,.visit-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-grid{gap:1.25rem}
+  .care-grid,.results{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .filters{grid-template-columns:minmax(0,1fr)}
+  .urgent-grid .actions{justify-content:flex-start}
+  .sticky{position:fixed;inset:auto 0 0;z-index:5;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;padding:.5rem 10px calc(.5rem + env(safe-area-inset-bottom));background:white;border-top:1px solid var(--line)}
+  .sticky .btn{padding-inline:.25rem}
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+  html{scroll-padding-bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+@media(prefers-reduced-motion:no-preference){
+  .btn{transition:background-color .16s ease}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#main" aria-label="Advanced Dental home">
+      <img width="48" height="48" alt="" src="data:image/webp;base64,UklGRjwEAABXRUJQVlA4TDAEAAAvL8ALEF5Q0LYN4/KnvcsgIibAPP1AeWBilCC9+sUl3Nq2VSv0X8qvBTvr4lqKXnk/++HOiCAlcncowK0LOiCDcA/GcBxJkqPm1x80Jzp7kV8MIKAAAECwmW3buo1kG4nNtm00K9n2m6pt27YnQG5t267V0OQP8XDW+Q/fwW+NEvgtvcO7QAWbVETybmdE8ib3PlTmXaihFqzjSJKkNt4vOht0uKIfyHFk21JClYGYPwE4rH7B7ftx2hoPcAAAINBku2bz4m3btm3btm3b9mnbtm1OgAaiMVlB4FGDQXhZyCAUMYZM52m0DpOcoEOIMzqFXgotgX9Wzx4aZdtJTRvTiCQS/70MejBSouwNu6OsYCnegwKfPa9uCraEEvzbyfXE1JOUKOEv6Sqt2NjscalKMcIuo3FqiJp7I12RlFSYppcEm6bmH2plL0b4LaKVbYjkZzy1MDW84PHsFMsKJtPOcpaguAdjJw2Iz+BnPjilJhkv8z94RbRKNnylSmqSAQkNgx3kGPIiP7waIxw8bghtGn1R8eBkQJWzeaLh3abus1HWwTKNsGf8on14wQu1dhJYIxi07aQ3RzeGefwN8eHDnUxki1YGaIxgeidLIdn21ORX5erbq+EnZjEWr8gPP0zS8heBwl0bq6qOEd6P6T4T4w498AFPEBr5QYveH8wmmozyz0/QDo4oxYltb9ftZCLhq4pqlqR8lRry4PvTyl6M0mRJJAsXro4Y1glmqiy7npRHeULq6MZ1HDJ/8Y66xC3qQadLOF0ZoAaoqk6KLxRdYRY/m7TmTdLkAYapQrRBjUhwhdZW6AhjqI1EPCobfAupPi2x6FTUfeSH6tUTu8JkJS3jY+er/KYtxTtHz9S6kIGAnwpWZ3ICm2h6Dk1Ngv3KlEwTmczBrw3p3+dpS0waPnNjkbaxptt+D582/HadnA1IsI0vG6dq/2r7Z4qlbZqUYb0/mO7aWMOojeYOjm3H+IvJtuH2g6RuG1MSR7XQOE5ygiRF3G1HbcKYfdtBbjLYZvHTubM2jYrEqg2P8Abj8BsSLa0MIBZttA8NwK49vss6+AXPdmqQtHpV4LuvKDD7ztq1dKIXlN2XiLO99SayYRyrS2re/isJKXWM/6pd7MW7SQZEQoLhVTuYsaNxEk4dqjqBBjuJlHT+R5YzHMH0Rm5wSVQSnOvBvhheoJoPDn8+7+ScHU2CJK023P/h4pYkJb0wchlzxls85BLTyLj964RGxYaKnroMzMpejJL0mHk4N/0v6nYSLomEOLVYna6932T4MwwWdZy7ursN4b17mXcY3JGEst/vbpQyamZpENTD3t590fqNHZ5ESfpP8VbHNG6G6yFv4WVMxPRZFm5M7Brqb3cNWnh/NMofNuD86e7vqvh7+izm6ndMls8PkGKqIlp938gLF9U8ygoeNLAF">
+      <span><b>Advanced</b> Dental</span>
+    </a>
+    <nav class="desktop" aria-label="Main navigation">
+      <a href="#clinic-finder">Clinics</a>
+      <a href="#treatments">Treatments</a>
+      <a href="https://www.advanceddental.co/doctors/">Dentists</a>
+      <a href="https://www.advanceddental.co/prices/">Prices</a>
+      <a class="btn" href="https://www.advanceddental.co/book-online/">Book online</a>
+    </nav>
+    <details class="menu">
+      <summary>Menu</summary>
+      <nav aria-label="Mobile navigation">
+        <a href="#clinic-finder">Clinics</a>
+        <a href="#treatments">Treatments</a>
+        <a href="https://www.advanceddental.co/doctors/">Dentists</a>
+        <a href="https://www.advanceddental.co/prices/">Prices</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="headline">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="place">22 clinics across Singapore</p>
+          <h1 id="headline">Dental care close to where you live.</h1>
+          <p class="lead">Find an Advanced Dental clinic for routine visits, family dentistry and specialist care.</p>
+          <div class="actions">
+            <a class="btn" href="https://www.advanceddental.co/book-online/">Book online</a>
+            <a class="btn outline" href="#clinic-finder">Find a clinic</a>
+            <a href="#urgent"><strong>Urgent dental care</strong></a>
+          </div>
+        </div>
+        <figure class="photo">
+          <img width="330" height="186" fetchpriority="high" alt="Reception at Advanced Dental Buangkok" src="data:image/webp;base64,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">
+          <figcaption>Advanced Dental · Buangkok</figcaption>
+        </figure>
+      </div>
+
+      <section class="finder" id="clinic-finder" aria-labelledby="finder-title">
+        <div class="finder-head">
+          <h2 id="finder-title">Find a clinic near you</h2>
+          <a href="https://www.advanceddental.co/clinics/">Browse all 22 clinics</a>
+        </div>
+        <div class="filters" hidden>
+          <label>Neighbourhood, clinic or MRT/LRT
+            <input id="clinic-query" type="search" placeholder="e.g. Bedok or DT33" autocomplete="off">
+          </label>
+          <label>Region
+            <select id="clinic-region">
+              <option value="">All regions</option>
+              <option value="central">Central</option>
+              <option value="east">East</option>
+              <option value="north">North</option>
+              <option value="northeast">Northeast</option>
+              <option value="west">West</option>
+            </select>
+          </label>
+        </div>
+        <p class="status" id="clinic-status" role="status"></p>
+        <ul class="results" id="clinic-results" aria-label="Matching clinics"></ul>
+      </section>
+    </div>
+  </section>
+
+  <section class="section" id="treatments">
+    <div class="wrap">
+      <h2>Explore treatments</h2>
+      <p class="intro">Start with the care you need, or browse the full procedure catalogue.</p>
+      <div class="care-grid">
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5c-4-2-8-1-8 3 0 3 2 5 3 9 1 3 2 3 3 0l2-5 2 5c1 3 2 3 3 0 1-4 3-6 3-9 0-4-4-5-8-3ZM18 2v5m-2.5-2.5h5"/></svg>
+          <h3>Check-ups &amp; cleaning</h3>
+          <p>Routine exams, scaling and polishing.</p>
+          <a href="https://www.advanceddental.co/procedures/dental-cleaning-and-check-up/">Check-ups and cleaning</a>
+        </article>
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7c-2-2-5-1-5 2 0 2 1 4 2 7s2 3 3 0l1-3 1 3c1 3 2 3 3 0 1-3 2-5 2-7 0-3-3-4-6-2Zm9 1c2-2 5-1 5 2 0 3-2 7-3 7s-1-3-2-4"/></svg>
+          <h3>Family dentistry</h3>
+          <p>Everyday dental care for children and adults.</p>
+          <a href="https://www.advanceddental.co/procedures/family-dentistry/">Family dental care</a>
+        </article>
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7c0-3 4-4 7-2 3-2 7-1 7 2l-2 4H7Zm4 6h6l-1 7-2 2-2-2Zm0 2 6 2m-5 1 4 2"/></svg>
+          <h3>Replacing missing teeth</h3>
+          <p>Compare implants, bridges and removable dentures.</p>
+          <a href="https://www.advanceddental.co/procedures/replacing-missing-teeth/">Tooth replacement options</a>
+        </article>
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7q8-4 16 0v8q-8 4-16 0Zm4 0v9m4-10v11m4-10v9M4 11q8 4 16 0"/></svg>
+          <h3>Clear aligners</h3>
+          <p>Ask about alignment options for your teeth and bite.</p>
+          <a href="https://www.advanceddental.co/procedures/invisalign/">Invisalign treatment</a>
+        </article>
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 17q8 4 16 0M6 12q-1-4 2-5 2-1 4 1 3-2 5 0t0 5l-1 3H8Zm12-7 3-2m-2 6h3"/></svg>
+          <h3>Wisdom teeth</h3>
+          <p>Understand the assessment and removal options.</p>
+          <a href="https://www.advanceddental.co/procedures/wisdom-tooth-surgery/">Wisdom tooth surgery</a>
+        </article>
+        <article class="care">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14q5-6 9 0 4-6 9 0v5H3Zm6-3V7a3 3 0 0 1 6 0v4M3 16h18"/></svg>
+          <h3>Gum care</h3>
+          <p>Explore assessment and treatment for gum concerns.</p>
+          <a href="https://www.advanceddental.co/procedures/gum-treatment/">Gum treatment</a>
+        </article>
+      </div>
+      <a class="btn outline" href="https://www.advanceddental.co/procedures/">View all procedures</a>
+    </div>
+  </section>
+
+  <section class="section urgent" id="urgent">
+    <div class="wrap urgent-grid">
+      <div>
+        <h2>Need an urgent dental appointment?</h2>
+        <p>Call the contact centre for help finding an available clinic, or choose <strong>Emergency Dentistry</strong> in the online booking form. Availability varies.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="tel:+6562332199">Call +65 6233 2199</a>
+        <a class="btn outline" href="https://www.advanceddental.co/book-online/">Check availability</a>
+        <a href="https://www.advanceddental.co/procedures/emergency-dentistry/">Emergency dentistry information</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap visit-grid">
+      <div>
+        <h2>Plan your visit</h2>
+        <p>Explore the dental team or ask the contact centre for help choosing a clinic.</p>
+        <div class="actions">
+          <a class="btn" href="https://www.advanceddental.co/doctors/">Meet the dentists</a>
+          <a class="btn outline" href="https://wa.me/6531385321">WhatsApp the team</a>
+        </div>
+      </div>
+      <div class="fees">
+        <h3>Prices &amp; payment</h3>
+        <p>Review published fees and see how CHAS or MediSave may apply to eligible treatments.</p>
+        <div class="actions">
+          <a href="https://www.advanceddental.co/prices/">Treatment prices</a>
+          <a href="https://www.advanceddental.co/chas/">CHAS and MediSave</a>
+          <a href="https://www.advanceddental.co/corporate/">Insurance panels</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Advanced Dental · Singapore</strong>
+    <div class="actions">
+      <a href="https://www.advanceddental.co/faq/">FAQs</a>
+      <a href="https://www.advanceddental.co/reviews/">Patient reviews</a>
+      <a href="https://www.advanceddental.co/privacy/">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" role="group" aria-label="Appointment options">
+  <a class="btn" href="https://www.advanceddental.co/book-online/">Book online</a>
+  <a class="btn outline" href="#urgent">Urgent dental care</a>
+</div>
+
+<script>
+const clinics = [
+  ['Ang Mo Kio','ang-mo-kio','central','Ang Mo Kio MRT (NS16)'],
+  ['Bedok','bedok','east','Tanah Merah MRT (EW4/CG)'],
+  ['Bishan','bishan','central','Bishan MRT (NS17/CC15)'],
+  ['Boon Keng (Century Dental)','boon-keng-century-dental','central','Boon Keng MRT (NE9)'],
+  ['Buangkok','buangkok','northeast','Buangkok MRT (NE15)'],
+  ['Bukit Batok (Thong Hoe Dental)','bukit-batok-thong-hoe-dental','west','Bukit Batok MRT (NS2)'],
+  ['Bukit Panjang Bangkit','bukit-panjang-bangkit','north west','Bangkit LRT (BP9)'],
+  ['Bukit Panjang Central','bukit-panjang-central','north west','Bukit Panjang MRT (DT1/BP6)'],
+  ['Jurong West','jurong-west','west','Lakeside MRT (EW26)'],
+  ['Loyang','loyang','east','Tampines East MRT (DT33)'],
+  ['Pasir Ris Central','pasir-ris-central','east','Pasir Ris MRT (EW1)'],
+  ['Punggol Northshore','punggol-northshore','northeast','Samudera LRT (PW4)'],
+  ['Punggol Plaza','punggol-plaza','northeast','Coral Edge LRT (PE3)'],
+  ['Punggol Waterway','punggol-waterway','northeast','Punggol MRT (NE17/PTC)'],
+  ['Sengkang','sengkang','northeast','Rumbia LRT (SE2)'],
+  ['Serangoon','serangoon','central northeast','Serangoon MRT (CC13/NE12)'],
+  ['Simei','simei','east','Simei MRT (EW3)'],
+  ['Specialists Novena','specialists-novena','central','Novena MRT (NS20)'],
+  ['Tampines East','tampines-east','east','Tampines East MRT (DT33)'],
+  ['Tampines North','tampines-north','east','Tampines MRT (DT32/EW2)'],
+  ['Toa Payoh','toa-payoh','central','Toa Payoh MRT (NS19)'],
+  ['Woodlands Central','woodlands-central','north','Woodlands MRT (NS9/TE2)']
+];
+
+const query = document.getElementById('clinic-query');
+const region = document.getElementById('clinic-region');
+const results = document.getElementById('clinic-results');
+const status = document.getElementById('clinic-status');
+
+function findClinics() {
+  const terms = query.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const selected = region.value;
+  results.replaceChildren();
+
+  if (!terms.length && !selected) {
+    status.textContent = '';
+    return;
+  }
+
+  const matches = clinics.filter(([name, , regions, station]) => {
+    const text = (name + ' ' + station).toLowerCase();
+    return (!selected || regions.split(' ').includes(selected))
+      && terms.every(term => text.includes(term));
+  });
+
+  status.textContent = matches.length
+    ? matches.length + (matches.length === 1 ? ' clinic found' : ' clinics found')
+    : 'No matching clinics. Try a different search or region.';
+
+  for (const [name, slug, , station] of matches) {
+    const item = document.createElement('li');
+    const link = document.createElement('a');
+    const stationName = document.createElement('span');
+
+    item.className = 'clinic-result';
+    link.href = 'https://www.advanceddental.co/clinics/advanced-dental-' + slug + '/';
+    link.textContent = name;
+    stationName.textContent = station;
+    item.append(link, stationName);
+    results.append(item);
+  }
+}
+
+query.addEventListener('input', findClinics);
+region.addEventListener('change', findClinics);
+document.querySelector('.filters').hidden = false;
+
+const menu = document.querySelector('.menu');
+
+menu.addEventListener('click', event => {
+  if (event.target.closest('a[href^="#"]')) menu.open = false;
+});
+
+menu.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.open) {
+    menu.open = false;
+    menu.querySelector('summary').focus();
+  }
+});
+</script>
+</body>
+</html>
